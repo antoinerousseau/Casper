@@ -375,12 +375,13 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     position: relative;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin: 0 -20px;
     padding: 40px 0 0 0;
 }
 
 .post-card {
-    flex: 1 1 300px;
+    flex: 0 1 300px;
     display: flex;
     flex-direction: column;
     min-height: 300px;
@@ -470,52 +471,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     text-transform: uppercase;
 }
 
-/* Special Styling for home page grid (below):
-
-The first (most recent) post in the list is styled to be bigger than the others and take over the full width of the grid to give it more emphasis. Wrapped in a media query to make sure this only happens on large viewports / desktop-ish devices.
-
- */
-
-@media (min-width: 795px) {
-    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) {
-        flex: 1 1 100%;
-        flex-direction: row;
-    }
-
-    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-image-link {
-        position: relative;
-        flex: 1 1 auto;
-        border-radius: 5px 0 0 5px;
-    }
-
-    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-image {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-    }
-
-    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-content {
-        flex: 0 1 357px;
-    }
-
-    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) h2 {
-        font-size: 2.6rem;
-    }
-
-    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) p {
-        font-size: 1.8rem;
-        line-height: 1.55em;
-    }
-
-    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-content-link {
-        padding: 30px 40px 0;
-    }
-
-    .home-template .post-feed .post-card:nth-child(6n+1):not(.no-image) .post-card-meta {
-        padding: 0 40px 30px;
-    }
-}
-
 .home-template .site-header:after {
     display: none;
 }
@@ -528,6 +483,7 @@ The first (most recent) post in the list is styled to be bigger than the others 
     }
     .post-card {
         margin: 0 20px 5vw;
+        flex: 1 1 300px;
     }
 }
 
@@ -1152,59 +1108,9 @@ Usage (In Ghost editor):
     padding: 3vw 0 6vw 0;
 }
 
-.author-card {
-    display: flex;
-    align-items: center;
-}
-
-.author-card .author-profile-image {
-    width: 60px;
-    height: 60px;
-    margin-right: 15px;
-}
-
-.author-card-name {
-    margin: 0 0 2px 0;
-    padding: 0;
-    font-size: 2rem;
-}
-
-.author-card-name a {
-    color: var(--darkgrey);
-    font-weight: 700;
-}
-
-.author-card-name a:hover {
-    text-decoration: none;
-}
-
-.author-card-content p {
-    margin: 0;
-    color: var(--midgrey);
-    line-height: 1.3em;
-}
-
 .post-full-footer-right {
     flex-shrink: 0;
     margin-left: 20px;
-}
-
-.author-card-button {
-    display: block;
-    padding: 9px 16px;
-    border: color(var(--midgrey) l(+20%)) 1px solid;
-    color: var(--midgrey);
-    font-size: 1.2rem;
-    line-height: 1;
-    font-weight: 500;
-    border-radius: 20px;
-    transition: all ease 0.2s;
-}
-
-.author-card-button:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-    text-decoration: none;
 }
 
 
